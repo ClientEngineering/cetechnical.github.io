@@ -13,7 +13,17 @@
   </head>
 
   <body>
-    <h1 style="text-align:center;">Welcome!</h2>
+    <h1 style="text-align:center;">Welcome to the main page!</h2>
     <a href="login.html"><button>Click Here to Login</button></a>
+    <script>
+      sm.getApi({version: 'v1'}).then(function(glia) {
+        glia.updateInformation({
+          customAttributes: {
+            name: '',
+            phone: '',
+            vip: ''
+          }})
+      });
+    </script>
   </body>
 </html>
