@@ -12,18 +12,20 @@
 
   </head>
 
-  <body>
+  <body onload = "scriptRunner()">
     <div><h1 style="text-align:center;">Welcome to the main page!</h2>
     <a href="login.html"><button>Click Here to Login</button></a></div>
-    <script>
+    <script type= text/javascript>
+      function scriptRunner() {
       sm.getApi({version: 'v1'}).then(function(glia) {
         glia.updateInformation({
           customAttributes: {
-            name: '',
-            phone: '',
+            Name: '',
+            Phone: '',
             vip: ''
           }})
       });
+      }
     </script>
   </body>
 </html>
