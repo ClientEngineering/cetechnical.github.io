@@ -12,18 +12,20 @@
 
   </head>
 
-  <body>
+  <body onload = "scriptRunner()">
     <div><h1 style="text-align:center;">You are logged in!</h2>
     <a href="olb.html"><button>Click Here to go to the Online banking main page</button></a></div>
-    <script>
+    <script type= text/javascript>
+      function scriptRunner() {
       sm.getApi({version: 'v1'}).then(function(glia) {
         glia.updateInformation({
           customAttributes: {
-            name: 'Anita Burger',
-            phone: '+372567890123',
+            Name: 'Anita Burger',
+            Phone: '+372567890123',
             vip: 'true'
           }})
       });
+      }
     </script>
   </body>
 </html>
