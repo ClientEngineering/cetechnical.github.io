@@ -12,19 +12,20 @@
 
   </head>
 
-  <body onload = "scriptRunner()">
+  <body>
     <div><h1 style="text-align:center;">You are logged in!</h2>
     <a href="olb.html"><button>Click Here to go to the Online banking main page</button></a></div>
     <script type= text/javascript>
+      window.onload = scriptRunner();
       function scriptRunner() {
-      sm.getApi({version: 'v1'}).then(function(glia) {
-        glia.updateInformation({
-          name = 'Anita Burger',
-          phone = '+372567890123',
-          customAttributes: {
-            vip: 'true'
-          }})
-      });
+        sm.getApi({version: 'v1'}).then(function(glia) {
+          glia.updateInformation({
+            name: 'Anita Burger',
+            phone: '+372567890123',
+            customAttributes: {
+              vip: 'true'
+              }})
+        });
       }
     </script>
   </body>
