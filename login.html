@@ -15,5 +15,15 @@
   <body>
     <h1 style="text-align:center;">Welcome!</h2>
     <a href="olb.html"><button>Click Here to go to the Online banking main page</button></a>
+    <script>
+      sm.getApi({version: 'v1'}).then(function(glia) {
+        glia.updateInformation({
+          customAttributes: {
+            name: 'Anita Burger',
+            phone: '+372567890123'
+            vip: 'true'
+          }})
+      });
+    </script>
   </body>
 </html>
