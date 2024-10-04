@@ -2,6 +2,19 @@
 <html>
   <head>
     <script async src="https://api.glia.com/salemove_integration.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        sm.getApi({version: 'v1'}).then(function(glia) {
+          glia.updateInformation({
+            name: '',
+            phone: '',
+            customAttributes: {
+              vip: 'false'
+            }
+          });
+        });
+      });
+    </script>
   <title>CE Technical Test</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
@@ -15,15 +28,5 @@
   <body>
     <div><h1>Byee have a great time!</h2>
     <a href="index.html"><button>Click Here to go back to main page</button></a></div>
-    <script>
-      sm.getApi({version: 'v1'}).then(function(glia) {
-        glia.updateInformation({
-          customAttributes: {
-            name: '',
-            phone: '',
-            vip: ''
-          }})
-      });
-    </script>
   </body>
 </html>
