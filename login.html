@@ -3,7 +3,7 @@
   <head>
     <script async src="https://api.glia.com/salemove_integration.js"></script>
     <script>
-      window.addEventListener('load', function() {
+      window.addEventListener('popstate', function() {
         sm.getApi({version: 'v1'}).then(function(glia) {
           glia.updateInformation({
             name: 'Anita Burger',
