@@ -38,6 +38,31 @@
     div {text-align: center;}
     p {color:#2C0735;}
     p {font-family: "Roboto", sans-serif;
+    video {
+        max-width: 100%;
+        height: auto;
+      }
+      .input-container {
+        margin-top: 20px;
+      }
+      #large-input {
+        width: 80%;
+        height: 100px;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      #submit-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #7C19DD;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #submit-button:hover {
+        background-color: #6010B0;
+      }
     </style>
   </head>
 
@@ -56,5 +81,18 @@
         Your browser does not support the video tag.
       </video>
     </div>
+          <div class="input-container">
+        <textarea id="large-input" placeholder="Enter your text here..."></textarea>
+        <br>
+        <button id="submit-button">Submit</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById('submit-button').addEventListener('click', function() {
+        var inputText = document.getElementById('large-input').value;
+        console.log('Submitted text:', inputText);
+        // You can add more functionality here, like sending the text to a server
+      });
+    </script>
   </body>
 </html>
