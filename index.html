@@ -80,18 +80,32 @@
         <source src="assets/video.mov" type="video/quicktime">
       </video>
     </div>
-          <div class="input-container">
-        <textarea id="large-input" placeholder="Enter your text here..."></textarea>
+      <div class="input-container">
+        <textarea id="large-input" placeholder="Enter your client-facing answer here"></textarea>
         <br>
-        <button id="submit-button">Submit</button>
+        <button id="submit-button">Send</button>
       </div>
+
+      <div id="submitted-text-container"></div>
     </div>
+
     <script>
       document.getElementById('submit-button').addEventListener('click', function() {
         var inputText = document.getElementById('large-input').value;
-        console.log('Submitted text:', inputText);
-        // You can add more functionality here, like sending the text to a server
+        
+        if (inputText.trim() !== '') {
+          var newParagraph = document.createElement('p');
+          newParagraph.textContent = inputText;
+
+          var container = document.getElementById('submitted-text-container');
+          container.insertBefore(newParagraph, container.firstChild);
+
+          document.getElementById('large-input').value = '';
+        } else {
+          alert('Please enter some text before submitting.');
+        }
       });
+        });
     </script>
   </body>
 </html>
