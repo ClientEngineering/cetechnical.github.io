@@ -89,23 +89,22 @@
       <div id="submitted-text-container"></div>
     </div>
 
-    <script>
-      document.getElementById('submit-button').addEventListener('click', function() {
-        var inputText = document.getElementById('large-input').value;
-        
-        if (inputText.trim() !== '') {
-          var newParagraph = document.createElement('p');
-          newParagraph.textContent = inputText;
-
-          var container = document.getElementById('submitted-text-container');
-          container.insertBefore(newParagraph, container.firstChild);
-
-          document.getElementById('large-input').value = '';
-        } else {
-          alert('Please enter some text before submitting.');
-        }
-      });
+      <script>
+        document.getElementById('submit-button').addEventListener('click', function() {
+          var inputText = document.getElementById('large-input').value;
+          
+          if (inputText.trim() !== '') {
+            var newParagraph = document.createElement('p');
+            newParagraph.textContent = inputText;
+      
+            var container = document.getElementById('submitted-text-container');
+            container.insertBefore(newParagraph, container.firstChild);
+      
+            document.getElementById('large-input').value = '';
+          } else {
+            alert('Please enter some text before submitting.');
+          }
         });
-    </script>
+      </script>
   </body>
 </html>
